@@ -6,85 +6,129 @@
 <title>Chesca's Portfolio</title>
 
 <style>
+
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:Arial, sans-serif;
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Segoe UI',sans-serif;
 }
 
 body{
-    background:linear-gradient(135deg,#6a0dad,#9b59b6,#d8b4fe);
-    min-height:100vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    padding:20px;
+background:linear-gradient(135deg,#ffb6f9,#c084fc,#8ec5ff);
+min-height:100vh;
+padding:20px;
 }
 
 .container{
-    background:white;
-    width:100%;
-    max-width:800px;
-    border-radius:20px;
-    padding:30px;
-    text-align:center;
-    box-shadow:0 8px 20px rgba(0,0,0,0.2);
+max-width:1000px;
+margin:auto;
 }
 
-h1{
-    color:#6a0dad;
-    margin-bottom:10px;
+.hero{
+background:white;
+border-radius:30px;
+padding:30px;
+text-align:center;
+box-shadow:0 10px 30px rgba(0,0,0,0.15);
+margin-bottom:20px;
 }
 
-p{
-    color:#444;
-    margin-bottom:20px;
+.hero img{
+width:180px;
+height:180px;
+object-fit:cover;
+border-radius:50%;
+border:6px solid #d8b4fe;
 }
 
-.buttons{
-    display:flex;
-    flex-wrap:wrap;
-    justify-content:center;
-    gap:10px;
+.hero h1{
+color:#7e22ce;
+margin-top:15px;
+font-size:40px;
 }
 
-button{
-    background:#8e44ad;
-    color:white;
-    border:none;
-    padding:12px 20px;
-    border-radius:10px;
-    cursor:pointer;
-    font-size:16px;
+.hero p{
+color:#555;
+margin-top:10px;
 }
 
-button:hover{
-    background:#6a0dad;
+.badge{
+display:inline-block;
+background:linear-gradient(to right,#ec4899,#a855f7);
+color:white;
+padding:10px 20px;
+border-radius:20px;
+margin-top:15px;
 }
 
-#content{
-    margin-top:25px;
-    padding:20px;
-    background:#f3e8ff;
-    border-radius:15px;
+.nav{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:10px;
+margin:20px 0;
 }
 
-img{
-    width:150px;
-    border-radius:50%;
-    margin-bottom:15px;
+.nav button{
+background:#9333ea;
+color:white;
+border:none;
+padding:12px 20px;
+border-radius:20px;
+cursor:pointer;
+font-size:16px;
 }
 
-@media(max-width:600px){
-    h1{
-        font-size:28px;
-    }
-
-    button{
-        width:100%;
-    }
+.nav button:hover{
+background:#7e22ce;
 }
+
+.card{
+background:white;
+padding:25px;
+border-radius:25px;
+box-shadow:0 8px 20px rgba(0,0,0,0.1);
+margin-bottom:20px;
+}
+
+.card h2{
+color:#9333ea;
+margin-bottom:15px;
+}
+
+.colors{
+display:flex;
+gap:15px;
+margin-top:15px;
+}
+
+.color{
+width:60px;
+height:60px;
+border-radius:50%;
+}
+
+.footer{
+text-align:center;
+color:white;
+padding:20px;
+font-weight:bold;
+}
+
+@media(max-width:700px){
+
+.hero h1{
+font-size:30px;
+}
+
+.hero img{
+width:140px;
+height:140px;
+}
+
+}
+
 </style>
 </head>
 
@@ -92,51 +136,114 @@ img{
 
 <div class="container">
 
-    <h1>💜 CHESCA'S PORTFOLIO 💜</h1>
+<div class="hero">
 
-    <p>Welcome to my digital world ✨</p>
+<img src="IMG_20260816_135240.jpg" alt="Chesca">
 
-    <div class="buttons">
-        <button onclick="about()">About Me</button>
-        <button onclick="hobbies()">Hobbies</button>
-        <button onclick="interests()">Interests</button>
-    </div>
+<h1>💜 Chesca Mangalos 💜</h1>
 
-    <div id="content">
-        Click a button above! 💜
-    </div>
+<p>Welcome to my digital portfolio ✨</p>
+
+<div class="badge">
+Grade 8 - Python
+</div>
+
+</div>
+
+<div class="nav">
+
+<button onclick="about()">About Me</button>
+
+<button onclick="hobbies()">Hobbies</button>
+
+<button onclick="favorites()">Favorites</button>
+
+</div>
+
+<div class="card" id="content">
+
+<h2>🌷 Welcome</h2>
+
+<p>
+Hi! I'm Chesca Mangalos.
+Click the buttons above to learn more about me.
+</p>
+
+</div>
+
+<div class="footer">
+
+Made with 💜 by Chesca
+
+</div>
 
 </div>
 
 <script>
 
 function about(){
-document.getElementById("content").innerHTML=
-`
-<h2>About Me</h2>
-<p>Hello! I'm Chesca.</p>
-<p>I love learning new things and creating fun projects.</p>
+
+document.getElementById("content").innerHTML = `
+
+<h2>👤 About Me</h2>
+
+<p>
+Hello! I am <b>Chesca Mangalos</b>, a Grade 8 student from
+<b>8-Python</b>.
+</p>
+
+<br>
+
+<p>
+I love learning new things, being creative, and improving my skills every day.
+</p>
+
 `;
+
 }
 
 function hobbies(){
-document.getElementById("content").innerHTML=
-`
-<h2>My Hobbies</h2>
-<p>🧶 Crochet</p>
-<p>💻 Coding</p>
-<p>🎵 Listening to Music</p>
+
+document.getElementById("content").innerHTML = `
+
+<h2>🧶 My Hobbies</h2>
+
+<ul>
+<li>Crocheting</li>
+<li>Coding</li>
+<li>Playing</li>
+<li>Watching Anime</li>
+<li>Learning New Things</li>
+</ul>
+
 `;
+
 }
 
-function interests(){
-document.getElementById("content").innerHTML=
-`
-<h2>My Interests</h2>
-<p>✨ Technology</p>
-<p>🎨 Creative Activities</p>
-<p>📚 Learning New Skills</p>
+function favorites(){
+
+document.getElementById("content").innerHTML = `
+
+<h2>🎨 Favorite Colors</h2>
+
+<div class="colors">
+
+<div class="color" style="background:pink;"></div>
+
+<div class="color" style="background:purple;"></div>
+
+<div class="color" style="background:#60a5fa;"></div>
+
+</div>
+
+<br>
+
+<p>
+My favorite colors are Pink, Purple, and Blue 💗💜💙
+</p>
+
 `;
+
 }
 
 </script>
