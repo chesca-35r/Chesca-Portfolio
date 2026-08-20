@@ -7,292 +7,356 @@
 
 <style>
 
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Segoe UI',sans-serif;
-background:linear-gradient(
-135deg,
-#ffd6f5,
-#e9c6ff,
-#c8b6ff,
-#bde0fe
-);
-min-height:100vh;
-padding:20px;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
 }
 
-.container{
-max-width:1000px;
-margin:auto;
+body {
+    background: linear-gradient(
+        135deg,
+        #ffd6f5,
+        #e9c6ff,
+        #c8b6ff,
+        #bde0fe
+    );
+    min-height: 100vh;
+    padding: 20px;
 }
 
-.hero{
-background:white;
-border-radius:30px;
-padding:30px;
-text-align:center;
-box-shadow:0 10px 30px rgba(0,0,0,0.15);
-margin-bottom:20px;
-  backdrop-filter: blur(10px);
-background: rgba(255,255,255,0.85);
-border: 1px solid rgba(255,255,255,0.4);
+.container {
+    max-width: 1000px;
+    margin: auto;
 }
 
-.hero img{
-width:180px;
-height:180px;
-object-fit:cover;
-border-radius:50%;
-border:6px solid #d8b4fe;
+.stars {
+    text-align: center;
+    font-size: 25px;
+    margin-bottom: 15px;
+    animation: float 3s infinite;
 }
 
-.hero h1{
-color:#7e22ce;
-margin-top:15px;
-font-size:40px;
+@keyframes float {
+    50% {
+        transform: translateY(-8px);
+    }
 }
 
-.hero p{
-color:#555;
-margin-top:10px;
+.hero {
+    background: rgba(255,255,255,0.88);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.5);
+    border-radius: 30px;
+    padding: 30px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    margin-bottom: 20px;
+    animation: fadeIn 1s;
 }
 
-.badge{
-display:inline-block;
-background:linear-gradient(to right,#ec4899,#a855f7);
-color:white;
-padding:10px 20px;
-border-radius:20px;
-margin-top:15px;
+.hero img {
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 6px solid #d8b4fe;
+    transition: 0.4s;
 }
 
-.nav{
-display:flex;
-flex-wrap:wrap;
-justify-content:center;
-gap:10px;
-margin:20px 0;
+.hero img:hover {
+    transform: scale(1.05);
 }
 
-.nav button{
-background:#9333ea;
-color:white;
-border:none;
-padding:12px 20px;
-border-radius:20px;
-cursor:pointer;
-font-size:16px;
+.hero h1 {
+    color: #7e22ce;
+    margin-top: 15px;
+    font-size: 40px;
 }
 
-.nav button:hover{
-background:#7e22ce;
+.hero p {
+    color: #555;
+    margin-top: 10px;
+    font-size: 18px;
 }
 
-.card{
-background:white;
-padding:25px;
-border-radius:25px;
-box-shadow:0 8px 20px rgba(0,0,0,0.1);
-margin-bottom:20px;
-  backdrop-filter: blur(10px);
-background: rgba(255,255,255,0.85);
-border: 1px solid rgba(255,255,255,0.4);
+.badge {
+    display: inline-block;
+    background: linear-gradient(to right, #ec4899, #a855f7);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 20px;
+    margin-top: 15px;
+    font-weight: bold;
 }
 
-.card h2{
-color:#9333ea;
-margin-bottom:15px;
+.nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin: 20px 0;
 }
 
-.colors{
-display:flex;
-gap:15px;
-margin-top:15px;
+.nav button {
+    background: #9333ea;
+    color: white;
+    border: none;
+    padding: 13px 25px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: 0.3s;
 }
 
-.color{
-width:60px;
-height:60px;
-border-radius:50%;
+.nav button:hover {
+    background: #7e22ce;
+    transform: translateY(-3px);
 }
 
-.footer{
-text-align:center;
-color:white;
-padding:20px;
-font-weight:bold;
+.card {
+    background: rgba(255,255,255,0.88);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.5);
+    padding: 25px;
+    border-radius: 25px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+    animation: fadeIn 1s;
 }
 
-@media(max-width:700px){
-
-.hero h1{
-font-size:30px;
+.card:hover {
+    transform: translateY(-5px);
+    transition: 0.3s;
 }
 
-.hero img{
-width:140px;
-height:140px;
-transition:0.4s;
+.card h2 {
+    color: #9333ea;
+    margin-bottom: 15px;
 }
 
-.hero img:hover{
-transform:scale(1.05);
+.card p {
+    color: #333;
+    line-height: 1.6;
+    margin-bottom: 8px;
 }
 
-
-  .stars{
-text-align:center;
-font-size:25px;
-margin-bottom:15px;
-animation: float 3s infinite;
+.card li {
+    margin: 10px 0;
+    color: #333;
 }
 
-@keyframes float{
-50%{
-transform:translateY(-8px);
-}
+.colors {
+    display: flex;
+    gap: 15px;
+    margin-top: 15px;
+    justify-content: center;
 }
 
+.color {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 3px solid white;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.footer {
+    text-align: center;
+    color: white;
+    padding: 20px;
+    font-weight: bold;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 700px) {
+
+    body {
+        padding: 12px;
+    }
+
+    .hero {
+        padding: 25px 15px;
+    }
+
+    .hero h1 {
+        font-size: 30px;
+    }
+
+    .hero img {
+        width: 140px;
+        height: 140px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    .nav button {
+        width: 100%;
+    }
+
+}
 
 </style>
 </head>
 
 <body>
 
-  <div class="stars">✨ 💜 ✨ 💖 ✨ 💜 ✨</div>
+<div class="stars">
+    ✨ 💜 ✨ 💗 ✨ 💜 ✨
+</div>
 
 <div class="container">
 
-<div class="hero">
+    <div class="hero">
 
-<img src="IMG_20260816_135240.jpg" alt="Chesca">
+        <img src="IMG_20260816_135240.jpg" alt="Chesca">
 
-<h1>💜 Chesca Mangalos 💜</h1>
+        <h1>💜 Chesca Mangalos 💜</h1>
 
-<p>A dreamer, creator, and learner 💜✨</p>
+        <p>A dreamer, creator, and learner ✨</p>
 
-<div class="badge">
-Grade 8 - Python
-</div>
+        <div class="badge">
+            Grade 8 - Python
+        </div>
 
-</div>
+    </div>
 
-<div class="nav">
+    <div class="nav">
 
-<button onclick="about()">About Me</button>
+        <button onclick="about()">👤 About Me</button>
 
-<button onclick="hobbies()">Hobbies</button>
+        <button onclick="hobbies()">🧶 Hobbies</button>
 
-<button onclick="favorites()">Favorites</button>
+        <button onclick="favorites()">🎨 Favorites</button>
 
-</div>
+    </div>
 
-<div class="card" id="content">
+    <div class="card" id="content">
 
-<div class="card">
+        <h2>🌷 Welcome!</h2>
 
-<h2>🌷 My Motto</h2>
+        <p>
+            Hi! I'm Chesca Mangalos.
+        </p>
 
-<p>
-"Every day is a chance to learn,
-grow, and become better."
-</p>
+        <p>
+            Click the buttons above to learn more about me! 💜
+        </p>
 
-</div>
+    </div>
 
-<h2>🌷 Welcome</h2>
+    <div class="card">
 
-<p>
-Hi! I'm Chesca Mangalos.
-Click the buttons above to learn more about me.
-</p>
+        <h2>🎀 Fun Facts About Me</h2>
 
-</div>
+        <p>🧶 I love crocheting.</p>
+        <p>💻 I enjoy coding.</p>
+        <p>🎮 I like playing.</p>
+        <p>📺 I enjoy watching anime.</p>
+        <p>📚 I love learning new things.</p>
 
-  <div class="card">
+    </div>
 
-<h2>🎀 Fun Facts About Me</h2>
+    <div class="card">
 
-<p>🧶 I love crocheting.</p>
-<p>💻 I enjoy coding.</p>
-<p>📺 I love watching anime.</p>
-<p>📚 I enjoy learning new things.</p>
+        <h2>🌷 My Motto</h2>
 
-  </div>
+        <p>
+            "Every day is a chance to learn,
+            grow, and become better."
+        </p>
 
-<div class="footer">
-Made with 💜 and creativity by Chesca
+    </div>
 
-</div>
+    <div class="footer">
+        Made with 💜 and creativity by Chesca
+    </div>
 
 </div>
 
 <script>
 
-function about(){
+function about() {
 
-document.getElementById("content").innerHTML = `
+    document.getElementById("content").innerHTML = `
 
-<h2>👤 About Me</h2>
+        <h2>👤 About Me</h2>
 
-<p>
-Hello! I am <b>Chesca Mangalos</b>, a Grade 8 student from
-<b>8-Python</b>.
-</p>
+        <p>
+            Hello! I am <b>Chesca Mangalos</b>,
+            a Grade 8 student from <b>8-Python</b>.
+        </p>
 
-<br>
+        <p>
+            I love learning new things, being creative,
+            and improving my skills every day. 💜
+        </p>
 
-<p>
-I love learning new things, being creative, and improving my skills every day.
-</p>
-
-`;
-
-}
-
-function hobbies(){
-
-document.getElementById("content").innerHTML = `
-
-<h2>🧶 My Hobbies</h2>
-
-<ul>
-<li>Crocheting</li>
-<li>Coding</li>
-<li>Playing</li>
-<li>Watching Anime</li>
-<li>Learning New Things</li>
-</ul>
-
-`;
+    `;
 
 }
 
-function favorites(){
+function hobbies() {
 
-document.getElementById("content").innerHTML = `
+    document.getElementById("content").innerHTML = `
 
-<h2>🎨 Favorite Colors</h2>
+        <h2>🧶 My Hobbies</h2>
 
-<div class="colors">
+        <ul>
+            <li>🧶 Crocheting</li>
+            <li>💻 Coding</li>
+            <li>🎮 Playing</li>
+            <li>📺 Watching Anime</li>
+            <li>📚 Learning New Things</li>
+        </ul>
 
-<div class="color" style="background:pink;"></div>
+    `;
 
-<div class="color" style="background:purple;"></div>
+}
 
-<div class="color" style="background:#60a5fa;"></div>
+function favorites() {
 
-</div>
+    document.getElementById("content").innerHTML = `
 
-<br>
+        <h2>🎨 My Favorite Colors</h2>
 
-<p>
-My favorite colors are Pink, Purple, and Blue 💗💜💙
-</p>
+        <div class="colors">
 
-`;
+            <div class="color"
+                 style="background:#ff69b4;">
+            </div>
+
+            <div class="color"
+                 style="background:#a855f7;">
+            </div>
+
+            <div class="color"
+                 style="background:#60a5fa;">
+            </div>
+
+        </div>
+
+        <br>
+
+        <p>
+            💗 Pink &nbsp; 💜 Purple &nbsp; 💙 Blue
+        </p>
+
+    `;
 
 }
 
