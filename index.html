@@ -12,10 +12,13 @@ margin:0;
 padding:0;
 box-sizing:border-box;
 font-family:'Segoe UI',sans-serif;
-}
-
-body{
-background:linear-gradient(135deg,#ffb6f9,#c084fc,#8ec5ff);
+background:linear-gradient(
+135deg,
+#ffd6f5,
+#e9c6ff,
+#c8b6ff,
+#bde0fe
+);
 min-height:100vh;
 padding:20px;
 }
@@ -32,6 +35,9 @@ padding:30px;
 text-align:center;
 box-shadow:0 10px 30px rgba(0,0,0,0.15);
 margin-bottom:20px;
+  backdrop-filter: blur(10px);
+background: rgba(255,255,255,0.85);
+border: 1px solid rgba(255,255,255,0.4);
 }
 
 .hero img{
@@ -90,6 +96,9 @@ padding:25px;
 border-radius:25px;
 box-shadow:0 8px 20px rgba(0,0,0,0.1);
 margin-bottom:20px;
+  backdrop-filter: blur(10px);
+background: rgba(255,255,255,0.85);
+border: 1px solid rgba(255,255,255,0.4);
 }
 
 .card h2{
@@ -125,14 +134,34 @@ font-size:30px;
 .hero img{
 width:140px;
 height:140px;
+transition:0.4s;
 }
 
+.hero img:hover{
+transform:scale(1.05);
 }
+
+
+  .stars{
+text-align:center;
+font-size:25px;
+margin-bottom:15px;
+animation: float 3s infinite;
+}
+
+@keyframes float{
+50%{
+transform:translateY(-8px);
+}
+}
+
 
 </style>
 </head>
 
 <body>
+
+  <div class="stars">✨ 💜 ✨ 💖 ✨ 💜 ✨</div>
 
 <div class="container">
 
@@ -142,7 +171,7 @@ height:140px;
 
 <h1>💜 Chesca Mangalos 💜</h1>
 
-<p>Welcome to my digital portfolio ✨</p>
+<p>A dreamer, creator, and learner 💜✨</p>
 
 <div class="badge">
 Grade 8 - Python
@@ -162,6 +191,17 @@ Grade 8 - Python
 
 <div class="card" id="content">
 
+<div class="card">
+
+<h2>🌷 My Motto</h2>
+
+<p>
+"Every day is a chance to learn,
+grow, and become better."
+</p>
+
+</div>
+
 <h2>🌷 Welcome</h2>
 
 <p>
@@ -171,9 +211,19 @@ Click the buttons above to learn more about me.
 
 </div>
 
-<div class="footer">
+  <div class="card">
 
-Made with 💜 by Chesca
+<h2>🎀 Fun Facts About Me</h2>
+
+<p>🧶 I love crocheting.</p>
+<p>💻 I enjoy coding.</p>
+<p>📺 I love watching anime.</p>
+<p>📚 I enjoy learning new things.</p>
+
+  </div>
+
+<div class="footer">
+Made with 💜 and creativity by Chesca
 
 </div>
 
