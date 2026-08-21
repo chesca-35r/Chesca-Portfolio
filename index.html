@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Chesca's Cutest Portfolio</title>
+<title>Chesca's Cute Portfolio</title>
 
 <style>
 
@@ -31,6 +31,7 @@ body{
     min-height:100vh;
     padding:15px;
     overflow-x:hidden;
+    transition:background 0.5s ease;
 }
 
 /* FLOATING DECORATIONS */
@@ -82,7 +83,7 @@ body{
     z-index:1;
 }
 
-/* TOP STARS */
+/* STARS */
 
 .stars{
     text-align:center;
@@ -196,21 +197,6 @@ body{
     color:#5f3b75;
 }
 
-/* GOALS */
-
-.goal{
-    background:linear-gradient(90deg,#fce7f3,#ede9fe);
-    padding:11px 13px;
-    border-radius:13px;
-    margin:8px 0;
-    color:#6b21a8;
-    transition:.2s;
-}
-
-.goal:hover{
-    transform:translateX(4px);
-}
-
 /* SKILLS */
 
 .skills{
@@ -246,6 +232,21 @@ body{
     color:#777;
     font-size:12px;
     margin-top:4px;
+}
+
+/* GOALS */
+
+.goal{
+    background:linear-gradient(90deg,#fce7f3,#ede9fe);
+    padding:11px 13px;
+    border-radius:13px;
+    margin:8px 0;
+    color:#6b21a8;
+    transition:.2s;
+}
+
+.goal:hover{
+    transform:translateX(4px);
 }
 
 /* PROJECT */
@@ -314,6 +315,48 @@ body{
     line-height:1.4;
 }
 
+/* FAVORITE COLORS */
+
+.color-buttons{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:10px;
+    margin-top:15px;
+}
+
+.color-button{
+    border:none;
+    color:white;
+    padding:11px 18px;
+    border-radius:20px;
+    font-size:14px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:.25s;
+    box-shadow:0 4px 10px rgba(0,0,0,.12);
+}
+
+.color-button:hover{
+    transform:translateY(-3px) scale(1.03);
+}
+
+.pink-button{
+    background:#ec4899;
+}
+
+.purple-button{
+    background:#9333ea;
+}
+
+.blue-button{
+    background:#3b82f6;
+}
+
+.reset-button{
+    background:#6b7280;
+}
+
 /* NOTE */
 
 .note{
@@ -332,23 +375,6 @@ body{
     font-style:italic;
 }
 
-/* COLORS */
-
-.colors{
-    display:flex;
-    justify-content:center;
-    gap:18px;
-    margin:15px 0;
-}
-
-.color{
-    width:55px;
-    height:55px;
-    border-radius:50%;
-    border:3px solid white;
-    box-shadow:0 4px 10px rgba(0,0,0,.15);
-}
-
 /* FOOTER */
 
 .footer{
@@ -365,10 +391,6 @@ body{
 
     body{
         padding:10px;
-    }
-
-    .container{
-        max-width:100%;
     }
 
     .hero{
@@ -406,27 +428,6 @@ body{
         font-size:18px;
     }
 
-    .skills{
-        grid-template-columns:repeat(2,1fr);
-    }
-
-    .corner-grid{
-        grid-template-columns:repeat(2,1fr);
-    }
-
-}
-
-@media(max-width:380px){
-
-    .hero h1{
-        font-size:24px;
-    }
-
-    .nav button{
-        padding:8px 10px;
-        font-size:12px;
-    }
-
 }
 
 </style>
@@ -461,7 +462,7 @@ Grade 8 - Python
 
 </div>
 
-<!-- BUTTONS -->
+<!-- NAVIGATION -->
 
 <div class="nav">
 
@@ -473,7 +474,7 @@ Grade 8 - Python
 
 </div>
 
-<!-- WELCOME -->
+<!-- INTERACTIVE CONTENT -->
 
 <div class="card" id="content">
 
@@ -679,14 +680,14 @@ a little more about me. 🎀
 </div>
 
 <div class="footer">
-
 Made with 💜 and creativity by Chesca
-
 </div>
 
 </div>
 
 <script>
+
+/* ABOUT ME */
 
 function about(){
 
@@ -711,6 +712,8 @@ my skills every day. ✨
 
 }
 
+/* HOBBIES */
+
 function hobbies(){
 
 document.getElementById("content").innerHTML = `
@@ -731,27 +734,79 @@ document.getElementById("content").innerHTML = `
 
 }
 
+/* FAVORITES */
+
 function favorites(){
 
 document.getElementById("content").innerHTML = `
 
 <h2>🎨 My Favorite Colors</h2>
 
-<div class="colors">
+<p>
+Click a color to change the background! ✨
+</p>
 
-<div class="color" style="background:#ff69b4;"></div>
+<div class="color-buttons">
 
-<div class="color" style="background:#a855f7;"></div>
+<button class="color-button pink-button"
+onclick="changeBackground('pink')">
+💗 Pink
+</button>
 
-<div class="color" style="background:#60a5fa;"></div>
+<button class="color-button purple-button"
+onclick="changeBackground('purple')">
+💜 Purple
+</button>
+
+<button class="color-button blue-button"
+onclick="changeBackground('blue')">
+💙 Blue
+</button>
+
+<button class="color-button reset-button"
+onclick="resetBackground()">
+↩️ Original
+</button>
 
 </div>
 
-<p style="text-align:center;">
-💗 Pink &nbsp; 💜 Purple &nbsp; 💙 Blue
-</p>
-
 `;
+
+}
+
+/* CHANGE BACKGROUND */
+
+function changeBackground(color){
+
+if(color === "pink"){
+
+document.body.style.background =
+"linear-gradient(135deg,#ffb6d9,#ff69b4,#f9a8d4)";
+
+}
+
+if(color === "purple"){
+
+document.body.style.background =
+"linear-gradient(135deg,#d8b4fe,#a855f7,#7e22ce)";
+
+}
+
+if(color === "blue"){
+
+document.body.style.background =
+"linear-gradient(135deg,#bfdbfe,#60a5fa,#3b82f6)";
+
+}
+
+}
+
+/* RESET BACKGROUND */
+
+function resetBackground(){
+
+document.body.style.background =
+"linear-gradient(135deg,#ffd6f5,#ead5ff,#cdb8ff,#c7e5ff)";
 
 }
 
