@@ -689,6 +689,24 @@ A few things that make me happy and inspired. 💜
 
 </div>
 
+<div class="card">
+
+<h2>🌸 Quote of the Day</h2>
+
+<p id="quoteText">
+"Small steps every day lead to big dreams." ✨
+</p>
+
+<div style="text-align:center; margin-top:15px;">
+
+<button class="send-btn" onclick="newQuote()">
+🔄 New Quote
+</button>
+
+</div>
+
+</div>
+    
 <!-- MOTTO -->
 
 <div class="card">
@@ -893,6 +911,32 @@ window.location.href =
 `mailto:mangaloschesca09@gmail.com?subject=${subject}&body=${body}`;
 
 }
+const quotes = [
+
+"Small steps every day lead to big dreams. ✨",
+
+"Believe in yourself and keep learning. 💜",
+
+"Creativity makes ordinary things beautiful. 🎀",
+
+"Every day is a new chance to grow. 🌸",
+
+"Dream big, work hard, stay kind. 🌷",
+
+"Learning never goes out of style. 📚"
+
+];
+
+function newQuote(){
+
+const random =
+Math.floor(Math.random()*quotes.length);
+
+document.getElementById("quoteText").innerHTML =
+`"${quotes[random]}"`;
+
+}
+    
 </script>
 
 </body>
