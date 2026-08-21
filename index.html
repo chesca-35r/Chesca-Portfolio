@@ -3,580 +3,631 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Chesca's Cute Portfolio</title>
 
 <style>
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Segoe UI', sans-serif;
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:"Segoe UI",sans-serif;
 }
 
-body {
-    background: linear-gradient(
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:linear-gradient(
         135deg,
         #ffd6f5,
-        #e9c6ff,
-        #c8b6ff,
-        #bde0fe
+        #ead5ff,
+        #cdb8ff,
+        #c7e5ff
     );
-    min-height: 100vh;
-    padding: 20px;
+    min-height:100vh;
+    padding:15px;
+    overflow-x:hidden;
 }
+
+/* FLOATING DECORATIONS */
+
 .floating{
     position:fixed;
     pointer-events:none;
     z-index:0;
-    animation:floatAround 6s ease-in-out infinite;
-    opacity:0.7;
+    opacity:.6;
+    animation:float 5s ease-in-out infinite;
 }
 
 .f1{
-    top:18%;
-    left:5%;
-    font-size:18px;
+    top:15%;
+    left:4%;
 }
 
 .f2{
     top:35%;
-    right:5%;
-    font-size:20px;
+    right:4%;
     animation-delay:1s;
 }
 
 .f3{
     top:65%;
-    left:7%;
-    font-size:15px;
+    left:5%;
     animation-delay:2s;
 }
 
 .f4{
-    top:75%;
-    right:8%;
-    font-size:18px;
+    top:80%;
+    right:6%;
     animation-delay:3s;
 }
 
-@keyframes floatAround{
-    0%,100%{
-        transform:translateY(0) rotate(0deg);
-    }
-
+@keyframes float{
     50%{
-        transform:translateY(-15px) rotate(8deg);
-    }
-}
-  
-.container {
-    max-width: 1000px;
-    margin: auto;
-}
-
-.stars {
-    text-align: center;
-    font-size: 25px;
-    margin-bottom: 15px;
-    animation: float 3s infinite;
-}
-
-@keyframes float {
-    50% {
-        transform: translateY(-8px);
+        transform:translateY(-12px) rotate(8deg);
     }
 }
 
-.hero {
-    background: rgba(255,255,255,0.88);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255,255,255,0.5);
-    border-radius: 30px;
-    padding: 30px;
-    text-align: center;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-    margin-bottom: 20px;
-    animation: fadeIn 1s;
+/* MAIN CONTAINER */
+
+.container{
+    width:100%;
+    max-width:760px;
+    margin:auto;
+    position:relative;
+    z-index:1;
 }
 
-.hero img {
-    width: 180px;
-    height: 180px;
-    object-fit: cover;
-    border-radius: 50%;
-    border: 6px solid #d8b4fe;
-    transition: 0.4s;
+/* TOP DECORATION */
+
+.stars{
+    text-align:center;
+    font-size:22px;
+    margin-bottom:12px;
+    animation:float 3s ease-in-out infinite;
 }
 
-.hero img:hover {
-    transform: scale(1.05);
+/* HERO */
+
+.hero{
+    background:rgba(255,255,255,.88);
+    border:1px solid rgba(255,255,255,.7);
+    border-radius:28px;
+    padding:25px 18px;
+    text-align:center;
+    box-shadow:0 10px 25px rgba(100,50,150,.15);
 }
 
-.hero h1 {
-    color: #7e22ce;
-    margin-top: 15px;
-    font-size: 40px;
+.hero img{
+    width:135px;
+    height:135px;
+    object-fit:cover;
+    border-radius:50%;
+    border:5px solid #d8b4fe;
+    box-shadow:0 5px 15px rgba(100,50,150,.2);
 }
 
-.hero p {
-    color: #555;
-    margin-top: 10px;
-    font-size: 18px;
+.hero h1{
+    color:#7e22ce;
+    font-size:32px;
+    margin-top:12px;
 }
 
-.badge {
-    display: inline-block;
-    background: linear-gradient(to right, #ec4899, #a855f7);
-    color: white;
-    padding: 10px 20px;
-    border-radius: 20px;
-    margin-top: 15px;
-    font-weight: bold;
+.hero p{
+    color:#666;
+    margin-top:7px;
 }
 
-.nav {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 10px;
-    margin: 20px 0;
+.badge{
+    display:inline-block;
+    margin-top:13px;
+    padding:8px 17px;
+    border-radius:20px;
+    background:linear-gradient(90deg,#ec4899,#a855f7);
+    color:white;
+    font-size:14px;
+    font-weight:bold;
 }
 
-.nav button {
-    background: #9333ea;
-    color: white;
-    border: none;
-    padding: 13px 25px;
-    border-radius: 25px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: 0.3s;
+/* NAVIGATION */
+
+.nav{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:8px;
+    margin:15px 0;
 }
 
-.nav button:hover {
-    background: #7e22ce;
-    transform: translateY(-3px);
+.nav button{
+    border:none;
+    padding:10px 17px;
+    border-radius:20px;
+    background:#9333ea;
+    color:white;
+    font-size:14px;
+    cursor:pointer;
+    transition:.25s;
 }
 
-.card {
-    background: rgba(255,255,255,0.88);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255,255,255,0.5);
-    padding: 25px;
-    border-radius: 25px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-    margin-bottom: 20px;
-    animation: fadeIn 1s;
+.nav button:hover{
+    transform:translateY(-3px);
+    background:#7e22ce;
 }
 
-.card:hover {
-    transform: translateY(-5px);
-    transition: 0.3s;
+/* CARDS */
+
+.card{
+    background:rgba(255,255,255,.88);
+    border:1px solid rgba(255,255,255,.7);
+    border-radius:22px;
+    padding:20px;
+    margin-bottom:15px;
+    box-shadow:0 7px 18px rgba(100,50,150,.12);
 }
 
-.card h2 {
-    color: #9333ea;
-    margin-bottom: 15px;
+.card h2{
+    color:#8b35c9;
+    font-size:20px;
+    margin-bottom:12px;
 }
 
-.card p {
-    color: #333;
-    line-height: 1.6;
-    margin-bottom: 8px;
+.card p{
+    color:#444;
+    line-height:1.6;
 }
 
-.card li {
-    margin: 10px 0;
-    color: #333;
+/* FUN FACTS */
+
+.fact{
+    background:linear-gradient(90deg,#fff0fa,#f3edff);
+    padding:9px 12px;
+    border-radius:12px;
+    margin:7px 0;
+    color:#5f3b75;
 }
 
-.colors {
-    display: flex;
-    gap: 15px;
-    margin-top: 15px;
-    justify-content: center;
-}
+/* GOALS */
 
-.color {
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    border: 3px solid white;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-}
-
-.footer {
-    text-align: center;
-    color: white;
-    padding: 20px;
-    font-weight: bold;
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@media (max-width: 700px) {
-
-    body {
-        padding: 12px;
-    }
-
-    .hero {
-        padding: 25px 15px;
-    }
-
-    .hero h1 {
-        font-size: 30px;
-    }
-
-    .hero img {
-        width: 140px;
-        height: 140px;
-    }
-
-    .hero p {
-        font-size: 16px;
-    }
-
-    .nav button {
-        width: 100%;
-    }
-
-}
-
-   .goal{
-    background:linear-gradient(
-        90deg,
-        #fce7f3,
-        #ede9fe
-    );
-    padding:13px 16px;
-    border-radius:15px;
-    margin:10px 0;
+.goal{
+    background:linear-gradient(90deg,#fce7f3,#ede9fe);
+    padding:11px 13px;
+    border-radius:13px;
+    margin:8px 0;
     color:#6b21a8;
-    transition:0.3s;
+    transition:.2s;
 }
 
 .goal:hover{
-    transform:translateX(5px);
+    transform:translateX(4px);
 }
+
+/* PROJECT */
 
 .project{
     text-align:center;
-    background:linear-gradient(
-        135deg,
-        #fdf2f8,
-        #f3e8ff
-    );
-    padding:25px;
-    border-radius:20px;
+    padding:20px;
     border:2px dashed #c084fc;
+    border-radius:18px;
+    background:linear-gradient(135deg,#fdf2f8,#f3e8ff);
 }
 
 .project-icon{
-    font-size:45px;
-    margin-bottom:10px;
+    font-size:40px;
 }
 
 .project h3{
     color:#7e22ce;
-    margin-bottom:8px;
-}
-
-.project p{
-    margin-bottom:15px;
+    margin:8px 0;
 }
 
 .project span{
     display:inline-block;
     background:#a855f7;
     color:white;
-    padding:8px 15px;
-    border-radius:20px;
-    font-size:14px;
+    padding:7px 13px;
+    border-radius:18px;
+    font-size:13px;
 }
 
-.gallery-text{
-    text-align:center;
-}
+/* NEW GALLERY */
 
-.gallery{
+.corner-grid{
     display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:12px;
-    margin-top:15px;
+    grid-template-columns:repeat(2,1fr);
+    gap:10px;
+    margin-top:13px;
 }
 
-.photo{
-    height:140px;
-    border-radius:20px;
+.corner{
+    padding:17px 10px;
+    text-align:center;
+    border-radius:18px;
     background:linear-gradient(
         135deg,
-        #fbcfe8,
-        #ddd6fe
+        #fff1fa,
+        #eee7ff
     );
+    border:1px solid #ead5ff;
+    transition:.25s;
+}
+
+.corner:hover{
+    transform:translateY(-4px);
+}
+
+.corner-icon{
+    font-size:30px;
+    margin-bottom:6px;
+}
+
+.corner h3{
+    font-size:14px;
+    color:#7e22ce;
+    margin-bottom:4px;
+}
+
+.corner p{
+    font-size:12px;
+    color:#666;
+    line-height:1.4;
+}
+
+/* COLORS */
+
+.colors{
     display:flex;
-    flex-direction:column;
-    align-items:center;
     justify-content:center;
-    font-size:40px;
-    transition:0.3s;
+    gap:18px;
+    margin:15px 0;
 }
 
-.photo:hover{
-    transform:translateY(-5px) rotate(1deg);
+.color{
+    width:55px;
+    height:55px;
+    border-radius:50%;
+    border:3px solid white;
+    box-shadow:0 4px 10px rgba(0,0,0,.15);
 }
 
-.photo span{
+/* FOOTER */
+
+.footer{
+    text-align:center;
+    color:white;
     font-size:13px;
-    color:#6b21a8;
-    margin-top:8px;
+    font-weight:bold;
+    padding:15px 5px 25px;
 }
 
-@media(max-width:700px){
+/* MOBILE */
 
-    .gallery{
-        grid-template-columns:1fr;
+@media(max-width:600px){
+
+    body{
+        padding:10px;
     }
 
-} 
+    .container{
+        max-width:100%;
+    }
+
+    .hero{
+        padding:22px 14px;
+    }
+
+    .hero img{
+        width:115px;
+        height:115px;
+    }
+
+    .hero h1{
+        font-size:27px;
+    }
+
+    .hero p{
+        font-size:14px;
+    }
+
+    .nav{
+        gap:6px;
+    }
+
+    .nav button{
+        padding:9px 13px;
+        font-size:13px;
+    }
+
+    .card{
+        padding:17px;
+        border-radius:19px;
+    }
+
+    .card h2{
+        font-size:18px;
+    }
+
+    .corner-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+}
 
 </style>
 </head>
 
 <body>
-    <div class="floating f1">💜</div>
+
+<!-- FLOATING DECORATIONS -->
+
+<div class="floating f1">💜</div>
 <div class="floating f2">✨</div>
 <div class="floating f3">💗</div>
 <div class="floating f4">⭐</div>
 
-<div class="stars">
-    ✨ 💜 ✨ 💗 ✨ 💜 ✨
-</div>
-
 <div class="container">
 
-    <div class="hero">
+<div class="stars">
+✨ 💜 ✨ 💗 ✨ 💜 ✨
+</div>
 
-        <img src="IMG_20260816_135240.jpg" alt="Chesca">
+<!-- HERO -->
 
-        <h1>💜 Chesca Mangalos 💜</h1>
+<div class="hero">
 
-        <p>A dreamer, creator, and learner ✨</p>
+<img src="IMG_20260816_135240.jpg" alt="Chesca">
 
-        <div class="badge">
-            Grade 8 - Python
-        </div>
+<h1>💜 Chesca Mangalos 💜</h1>
 
-    </div>
+<p>A dreamer, creator, and learner ✨</p>
 
-    <div class="nav">
+<div class="badge">
+Grade 8 - Python
+</div>
 
-        <button onclick="about()">👤 About Me</button>
+</div>
 
-        <button onclick="hobbies()">🧶 Hobbies</button>
+<!-- BUTTONS -->
 
-        <button onclick="favorites()">🎨 Favorites</button>
+<div class="nav">
 
-    </div>
+<button onclick="about()">👤 About Me</button>
 
-    <div class="card" id="content">
+<button onclick="hobbies()">🧶 Hobbies</button>
 
-        <h2>🌷 Welcome!</h2>
+<button onclick="favorites()">🎨 Favorites</button>
 
-        <p>
-            Hi! I'm Chesca Mangalos.
-        </p>
+</div>
 
-        <p>
-            Click the buttons above to learn more about me! 💜
-        </p>
+<!-- WELCOME -->
 
-    </div>
+<div class="card" id="content">
 
-    <div class="card">
+<h2>🌷 Welcome!</h2>
 
-        <h2>🎀 Fun Facts About Me</h2>
+<p>
+Hi! I'm Chesca Mangalos. 💜
+</p>
 
-        <p>🧶 I love crocheting.</p>
-        <p>💻 I enjoy coding.</p>
-        <p>🎮 I like playing.</p>
-        <p>📺 I enjoy watching anime.</p>
-        <p>📚 I love learning new things.</p>
+<p>
+Welcome to my little portfolio!
+Click the buttons above to learn more about me. ✨
+</p>
 
-    </div>
+</div>
 
-    <div class="card">
+<!-- FUN FACTS -->
 
-    <h2>🌷 My Goals</h2>
+<div class="card">
 
-    <div class="goal">
-        💻 Improve my coding skills
-    </div>
+<h2>🎀 Fun Facts About Me</h2>
 
-    <div class="goal">
-        🧶 Learn more creative skills
-    </div>
+<div class="fact">🧶 I love crocheting.</div>
 
-    <div class="goal">
-        📚 Learn something new every day
-    </div>
+<div class="fact">💻 I enjoy coding.</div>
 
-    <div class="goal">
-        🌟 Create my own amazing projects
-    </div>
+<div class="fact">🎮 I like playing.</div>
 
-    </div>
+<div class="fact">📺 I enjoy watching anime.</div>
 
-    <div class="card">
+<div class="fact">📚 I love learning new things.</div>
 
-    <h2>💻 My Projects</h2>
+</div>
 
-    <div class="project">
+<!-- GOALS -->
 
-        <div class="project-icon">🚀</div>
+<div class="card">
 
-        <h3>My Future Projects</h3>
+<h2>🌷 My Goals</h2>
 
-        <p>
-            More creative projects are coming soon! ✨
-        </p>
+<div class="goal">
+💻 Improve my coding skills
+</div>
 
-        <span>🔒 Coming Soon...</span>
+<div class="goal">
+🧶 Learn more creative skills
+</div>
 
-    </div>
+<div class="goal">
+📚 Learn something new every day
+</div>
 
-    </div>
+<div class="goal">
+🌟 Create my own amazing projects
+</div>
 
-    <div class="card">
+</div>
 
-    <h2>📸 My Gallery</h2>
+<!-- PROJECTS -->
 
-    <p class="gallery-text">
-        Little moments and memories 💜
-    </p>
+<div class="card">
 
-    <div class="gallery">
+<h2>💻 My Projects</h2>
 
-        <div class="photo">
-            <img src="received_992169450537550.jpeg" alt="My Photo">
-            <span>My Photo</span>
-        </div>
+<div class="project">
 
-        <div class="photo">
-            <img src="IMG_20260816_134814.jpg" alt="Favorite Moment">
-            <span>Favorite Moment</span>
-        </div>
+<div class="project-icon">🚀</div>
 
-        <div class="photo">
-            <img src="received_1022104854163182.jpeg" alt="Memories">
-            <span>Memories</span>
-        </div>
+<h3>My Future Projects</h3>
 
-    </div>
+<p>
+I'm still learning and creating.
+More projects are coming soon! ✨
+</p>
 
-    </div>
+<br>
 
-    <div class="card">
+<span>🔒 Coming Soon...</span>
 
-        <h2>🌷 My Motto</h2>
+</div>
 
-        <p>
-            "Every day is a chance to learn,
-            grow, and become better."
-        </p>
+</div>
 
-    </div>
+<!-- NEW GALLERY / LITTLE CORNER -->
 
-    <div class="footer">
-        Made with 💜 and creativity by Chesca
-    </div>
+<div class="card">
+
+<h2>🌸 My Little Corner</h2>
+
+<p>
+A few things that make me happy and inspired. 💜
+</p>
+
+<div class="corner-grid">
+
+<div class="corner">
+<div class="corner-icon">🧶</div>
+<h3>Crochet Corner</h3>
+<p>Making cute things with yarn.</p>
+</div>
+
+<div class="corner">
+<div class="corner-icon">💻</div>
+<h3>Coding Corner</h3>
+<p>Learning and building new ideas.</p>
+</div>
+
+<div class="corner">
+<div class="corner-icon">🎮</div>
+<h3>Play Time</h3>
+<p>Having fun during my free time.</p>
+</div>
+
+<div class="corner">
+<div class="corner-icon">📺</div>
+<h3>Anime Corner</h3>
+<p>Watching anime and enjoying stories.</p>
+</div>
+
+<div class="corner">
+<div class="corner-icon">📚</div>
+<h3>Learning Corner</h3>
+<p>Discovering something new every day.</p>
+</div>
+
+<div class="corner">
+<div class="corner-icon">🌟</div>
+<h3>Dream Corner</h3>
+<p>Thinking of future projects.</p>
+</div>
+
+</div>
+
+</div>
+
+<!-- MOTTO -->
+
+<div class="card">
+
+<h2>🌷 My Motto</h2>
+
+<p>
+"Every day is a chance to learn,
+grow, and become better."
+</p>
+
+</div>
+
+<!-- FOOTER -->
+
+<div class="footer">
+Made with 💜 and creativity by Chesca
+</div>
 
 </div>
 
 <script>
 
-function about() {
+function about(){
 
-    document.getElementById("content").innerHTML = `
+document.getElementById("content").innerHTML = `
 
-        <h2>👤 About Me</h2>
+<h2>👤 About Me</h2>
 
-        <p>
-            Hello! I am <b>Chesca Mangalos</b>,
-            a Grade 8 student from <b>8-Python</b>.
-        </p>
+<p>
+Hello! I am <b>Chesca Mangalos</b>,
+a Grade 8 student from <b>8-Python</b>. 💜
+</p>
 
-        <p>
-            I love learning new things, being creative,
-            and improving my skills every day. 💜
-        </p>
+<br>
 
-    `;
+<p>
+I love learning new things, being creative,
+and improving my skills every day. ✨
+</p>
 
-}
-
-function hobbies() {
-
-    document.getElementById("content").innerHTML = `
-
-        <h2>🧶 My Hobbies</h2>
-
-        <ul>
-            <li>🧶 Crocheting</li>
-            <li>💻 Coding</li>
-            <li>🎮 Playing</li>
-            <li>📺 Watching Anime</li>
-            <li>📚 Learning New Things</li>
-        </ul>
-
-    `;
+`;
 
 }
 
-function favorites() {
+function hobbies(){
 
-    document.getElementById("content").innerHTML = `
+document.getElementById("content").innerHTML = `
 
-        <h2>🎨 My Favorite Colors</h2>
+<h2>🧶 My Hobbies</h2>
 
-        <div class="colors">
+<div class="fact">🧶 Crocheting</div>
 
-            <div class="color"
-                 style="background:#ff69b4;">
-            </div>
+<div class="fact">💻 Coding</div>
 
-            <div class="color"
-                 style="background:#a855f7;">
-            </div>
+<div class="fact">🎮 Playing</div>
 
-            <div class="color"
-                 style="background:#60a5fa;">
-            </div>
+<div class="fact">📺 Watching Anime</div>
 
-        </div>
+<div class="fact">📚 Learning New Things</div>
 
-        <br>
+`;
 
-        <p>
-            💗 Pink &nbsp; 💜 Purple &nbsp; 💙 Blue
-        </p>
+}
 
-    `;
+function favorites(){
+
+document.getElementById("content").innerHTML = `
+
+<h2>🎨 My Favorite Colors</h2>
+
+<div class="colors">
+
+<div class="color" style="background:#ff69b4;"></div>
+
+<div class="color" style="background:#a855f7;"></div>
+
+<div class="color" style="background:#60a5fa;"></div>
+
+</div>
+
+<p style="text-align:center;">
+💗 Pink &nbsp; 💜 Purple &nbsp; 💙 Blue
+</p>
+
+`;
 
 }
 
 </script>
 
 </body>
-</html>
+    </html>
