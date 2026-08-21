@@ -637,6 +637,34 @@ More projects are coming soon! ✨
 
 </div>
 
+    <div class="card">
+
+<h2>😊 Today's Mood</h2>
+
+<div id="moodCard" style="text-align:center;">
+
+<div id="moodEmoji" style="font-size:45px;">
+✨
+</div>
+
+<h3 id="moodTitle"
+style="color:#7e22ce;margin:10px 0;">
+Motivated
+</h3>
+
+<p id="moodText">
+Ready to learn and create something amazing today!
+</p>
+
+<button class="send-btn"
+onclick="changeMood()"
+style="margin-top:15px;">
+🎀 Change Mood
+</button>
+
+</div>
+
+    </div>
 <!-- LITTLE CORNER -->
 
 <div class="card">
@@ -934,6 +962,62 @@ Math.floor(Math.random()*quotes.length);
 
 document.getElementById("quoteText").innerHTML =
 `"${quotes[random]}"`;
+
+}
+
+    const moods = [
+
+{
+emoji:"✨",
+title:"Motivated",
+text:"Ready to learn and create something amazing today!"
+},
+
+{
+emoji:"🌸",
+title:"Calm",
+text:"Taking things one step at a time."
+},
+
+{
+emoji:"😎",
+title:"Chill",
+text:"Enjoying the little moments."
+},
+
+{
+emoji:"🎀",
+title:"Creative",
+text:"Full of ideas and inspiration."
+},
+
+{
+emoji:"😊",
+title:"Happy",
+text:"Smiling and enjoying the day!"
+},
+
+{
+emoji:"📚",
+title:"Learning",
+text:"Every day is a chance to grow."
+}
+
+];
+
+function changeMood(){
+
+const random =
+Math.floor(Math.random()*moods.length);
+
+document.getElementById("moodEmoji").innerHTML =
+moods[random].emoji;
+
+document.getElementById("moodTitle").innerHTML =
+moods[random].title;
+
+document.getElementById("moodText").innerHTML =
+moods[random].text;
 
 }
     
