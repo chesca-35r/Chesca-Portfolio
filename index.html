@@ -430,6 +430,49 @@ body{
 
 }
 
+.message-form{
+display:flex;
+flex-direction:column;
+gap:12px;
+margin-top:15px;
+}
+
+.message-form input,
+.message-form textarea{
+width:100%;
+padding:12px;
+border:none;
+border-radius:14px;
+background:#faf5ff;
+border:2px solid #e9d5ff;
+font-size:14px;
+outline:none;
+transition:.25s;
+}
+
+.message-form input:focus,
+.message-form textarea:focus{
+border-color:#a855f7;
+box-shadow:0 0 10px rgba(168,85,247,.2);
+}
+
+.send-btn{
+background:linear-gradient(90deg,#ec4899,#a855f7);
+color:white;
+border:none;
+padding:12px;
+border-radius:18px;
+font-size:15px;
+font-weight:bold;
+cursor:pointer;
+transition:.25s;
+}
+
+.send-btn:hover{
+transform:translateY(-3px);
+box-shadow:0 8px 18px rgba(168,85,247,.3);
+}
+    
 </style>
 </head>
 
@@ -679,6 +722,29 @@ a little more about me. 🎀
 
 </div>
 
+<div class="card">
+
+<h2>💌 Send a Message to Me</h2>
+
+<p>
+I'd love to hear from you! Leave a little message below. ✨
+</p>
+
+<div class="message-form">
+
+<input id="senderName" type="text" placeholder="Your Name">
+
+<textarea id="senderMessage" rows="4"
+placeholder="Write your message here..."></textarea>
+
+<button class="send-btn" onclick="sendMessage()">
+📨 Send Message
+</button>
+
+</div>
+
+</div>
+    
 <div class="footer">
 Made with 💜 and creativity by Chesca
 </div>
@@ -809,7 +875,24 @@ document.body.style.background =
 "linear-gradient(135deg,#ffd6f5,#ead5ff,#cdb8ff,#c7e5ff)";
 
 }
+function sendMessage(){
 
+const name =
+document.getElementById("senderName").value.trim();
+
+const message =
+document.getElementById("senderMessage").value.trim();
+
+const subject =
+encodeURIComponent("Portfolio Message from " + (name || "Anonymous"));
+
+const body =
+encodeURIComponent(message || "Hi Chesca! I visited your portfolio. 💜");
+
+window.location.href =
+`mailto:mangaloschesca09@gmail.com?subject=${subject}&body=${body}`;
+
+}
 </script>
 
 </body>
